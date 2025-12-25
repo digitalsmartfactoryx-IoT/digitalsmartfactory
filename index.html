@@ -1,133 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Digital Smart Factory | Industry 4.0, OPC & Industrial IoT Solutions India</title>
+<meta charset="UTF-8">
+<title>Digital Smart Factory | Industry 4.0 & Industrial IoT</title>
 
-    <meta name="description"
-          content="Digital Smart Factory delivers enterprise-grade Industry 4.0 and OPC-based Industrial IoT solutions, enabling large-scale CNC and PLC connectivity, production monitoring, energy management, and smart factory transformation.">
+<meta name="description"
+content="Digital Smart Factory delivers enterprise-grade Industry 4.0, OPC and Industrial IoT solutions for CNC, PLC, production monitoring, energy management and smart manufacturing.">
 
-    <meta name="keywords"
-          content="Industry 4.0 India, OPC UA Gateway, Industrial IoT, CNC Monitoring, PLC Integration, Smart Factory, Energy Management System, EMS">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ================= GLOBAL ================= */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial,sans-serif}
+body{background:#f8fafc;color:#1f2933;line-height:1.7}
+.container{width:90%;max-width:1200px;margin:auto}
 
-    <!-- ✅ CSS PATH FIXED -->
-    <link rel="stylesheet" href="./style.css">
+/* ================= HEADER ================= */
+.header{
+background:linear-gradient(135deg,#0f172a,#020617);
+color:#fff;padding:32px 0
+}
+.brand h1{font-size:32px;font-weight:600}
+.brand p{color:#cbd5e1;margin-top:6px}
+
+/* ================= NAV ================= */
+.nav{background:#020617;position:sticky;top:0;z-index:99}
+.nav-flex{display:flex;gap:28px;flex-wrap:wrap}
+.nav a{color:#e5e7eb;text-decoration:none;padding:14px 0;font-weight:500}
+.nav a:hover{color:#38bdf8}
+
+/* ================= HERO ================= */
+.hero{
+background:
+linear-gradient(rgba(2,6,23,.75),rgba(2,6,23,.75)),
+url("./assets/images/hero.jpg");
+background-size:cover;
+background-position:center;
+color:#fff;
+text-align:center;
+padding:90px 0
+}
+.hero h2{font-size:40px;margin-bottom:16px}
+.hero p{max-width:850px;margin:auto;color:#e5e7eb;font-size:18px}
+
+/* ================= SECTIONS ================= */
+.section{padding:70px 0}
+.section.light{background:#ffffff}
+.section h2{font-size:30px;margin-bottom:22px;color:#020617}
+
+/* ================= GRID & CARDS ================= */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:26px
+}
+.card{
+background:#ffffff;
+border-radius:10px;
+padding:22px;
+border:1px solid #e5e7eb;
+transition:.3s ease;
+box-shadow:0 8px 22px rgba(0,0,0,.04)
+}
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 18px 40px rgba(0,0,0,.12)
+}
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:14px
+}
+.card h3{color:#020617;margin-bottom:10px}
+.card p{font-size:15px;color:#374151}
+
+/* ================= LIST ================= */
+.list{margin-left:22px}
+.list li{margin-bottom:8px}
+
+/* ================= CONTACT ================= */
+.contact-box{
+background:#f1f5f9;
+padding:24px;
+border-left:4px solid #38bdf8;
+border-radius:6px
+}
+
+/* ================= FOOTER ================= */
+.footer{
+background:#020617;
+color:#fff;
+text-align:center;
+padding:24px 0
+}
+.footer-small{color:#9ca3af;font-size:13px;margin-top:6px}
+
+/* ================= ANIMATIONS ================= */
+.fade-up{
+opacity:0;
+transform:translateY(30px);
+transition:all .8s ease
+}
+.fade-up.show{opacity:1;transform:translateY(0)}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+.hero h2{font-size:30px}
+}
+</style>
 </head>
 
 <body>
 
 <header class="header">
-    <div class="container">
-        <div class="brand">
-            <h1>Digital Smart Factory</h1>
-            <p>Industry 4.0 • OPC • Industrial IoT • Smart Manufacturing</p>
-        </div>
-    </div>
+<div class="container brand">
+<h1>Digital Smart Factory</h1>
+<p>Industry 4.0 • OPC • Industrial IoT • Smart Manufacturing</p>
+</div>
 </header>
 
 <nav class="nav">
-    <div class="container nav-flex">
-        <a href="#about">About</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#opc">OPC Gateway</a>
-        <a href="#clients">Clients</a>
-        <a href="#contact">Contact</a>
-    </div>
+<div class="container nav-flex">
+<a href="#about">About</a>
+<a href="#solutions">Solutions</a>
+<a href="#opc">OPC Gateway</a>
+<a href="#clients">Clients</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
-<section class="hero hero-image">
-    <div class="container fade-up show">
-        <h2>OPC-Driven Smart Factories at Enterprise Scale</h2>
-        <p>
-            Enabling manufacturers to connect CNC machines, PLCs, and industrial utilities
-            through a centralized OPC-based Smart IoT Gateway for real-time visibility,
-            operational efficiency, and sustainable manufacturing.
-        </p>
-    </div>
+<section class="hero">
+<div class="container fade-up show">
+<h2>Digital Transformation through Industrial IoT</h2>
+<p>
+Connecting CNCs, PLCs and industrial assets using a centralized OPC-based Smart IoT Gateway
+to enable real-time visibility, efficiency and sustainable manufacturing.
+</p>
+</div>
 </section>
 
 <section id="about" class="section fade-up">
-    <div class="container">
-        <h2>About Digital Smart Factory</h2>
-        <p>
-            Digital Smart Factory supports manufacturing organizations in their
-            Industry 4.0 journey by transforming fragmented shopfloor environments
-            into unified, data-driven operations.
-        </p>
-    </div>
+<div class="container">
+<h2>About Digital Smart Factory</h2>
+<p>
+We help manufacturing organizations move from isolated machines to
+connected, data-driven operations using Industry 4.0 and Industrial IoT principles.
+</p>
+<p>
+Our expertise spans CNC & PLC integration, OPC-based data architectures,
+production monitoring, energy management and decarbonization programs.
+</p>
+</div>
 </section>
 
 <section id="solutions" class="section light fade-up">
-    <div class="container">
-        <h2>Our Industrial Solutions</h2>
+<div class="container">
+<h2>Our Industrial Solutions</h2>
 
-        <div class="grid">
+<div class="grid">
 
-            <div class="card fade-up delay-1">
-                <img src="./assets/images/iot.jpg" alt="Industry 4.0 Smart Factory">
-                <h3>Industry 4.0 & Smart Factory</h3>
-                <p>End-to-end shopfloor digitization enabling connected manufacturing.</p>
-            </div>
+<div class="card">
+<img src="./assets/images/iot.jpg">
+<h3>Industry 4.0 & Smart Factory</h3>
+<p>End-to-end digitization enabling intelligent, connected manufacturing operations.</p>
+</div>
 
-            <div class="card fade-up delay-2">
-                <img src="./assets/images/production.jpg" alt="Production Monitoring">
-                <h3>Production & CNC Monitoring</h3>
-                <p>Real-time visibility of cycle time, downtime and utilization.</p>
-            </div>
+<div class="card">
+<img src="./assets/images/production.jpg">
+<h3>Production & CNC Monitoring</h3>
+<p>Real-time cycle time, part count, downtime, alarms and utilization visibility.</p>
+</div>
 
-            <div class="card fade-up delay-3">
-                <img src="./assets/images/energy.jpg" alt="Energy Management System">
-                <h3>Energy Management System (EMS)</h3>
-                <p>Monitoring electricity, DG, UPS and utilities.</p>
-            </div>
+<div class="card">
+<img src="./assets/images/energy.jpg">
+<h3>Energy Management System (EMS)</h3>
+<p>Monitoring electricity, DG, UPS and utilities to improve efficiency and reduce cost.</p>
+</div>
 
-            <div class="card fade-up delay-1">
-                <img src="./assets/images/decarb.jpg" alt="Decarbonization">
-                <h3>Decarbonization & Sustainability</h3>
-                <p>Data-driven ESG and carbon reduction strategies.</p>
-            </div>
+<div class="card">
+<img src="./assets/images/decarb.jpg">
+<h3>Decarbonization & Sustainability</h3>
+<p>Data-driven insights supporting ESG and carbon reduction initiatives.</p>
+</div>
 
-        </div>
-    </div>
+</div>
+</div>
+</section>
+
+<section id="opc" class="section fade-up">
+<div class="container">
+<h2>OPC-Based Smart IoT Gateway</h2>
+
+<p>
+Our architecture uses a centralized Smart OPC Gateway to securely connect
+heterogeneous shop-floor assets into a single scalable data model.
+</p>
+
+<h3>Supported Platforms</h3>
+<ul class="list">
+<li>CNC: FANUC, Brother, Siemens Sinumerik</li>
+<li>PLC: Siemens, Mitsubishi, Delta</li>
+<li>Energy meters, sensors, drives, utilities</li>
+</ul>
+
+<h3>Protocols</h3>
+<ul class="list">
+<li>OPC UA / OPC DA</li>
+<li>Modbus RTU (RS-485) & TCP/IP</li>
+<li>FOCAS, SLMP, MC Protocol</li>
+<li>Profinet, Profibus, Serial</li>
+</ul>
+
+<p>
+A single gateway can scale up to <strong>100–200 machines</strong>,
+reducing infrastructure complexity and licensing overhead.
+</p>
+</div>
 </section>
 
 <section id="clients" class="section light fade-up">
-    <div class="container">
-        <h2>Clients & Industry Exposure</h2>
+<div class="container">
+<h2>Clients & Industry Exposure</h2>
 
-        <div class="grid">
-            <div class="card">
-                <img src="./assets/images/sbr.jpg" alt="SBR Auto">
-                <h3>SBR Auto</h3>
-            </div>
+<div class="grid">
+<div class="card">
+<img src="./assets/images/sbr.jpg">
+<h3>SBR Auto</h3>
+</div>
 
-            <div class="card">
-                <img src="./assets/images/minda.jpg" alt="Minda Group">
-                <h3>Minda Group</h3>
-            </div>
-        </div>
-    </div>
+<div class="card">
+<img src="./assets/images/minda.jpg">
+<h3>Minda Group</h3>
+</div>
+
+<div class="card">
+<h3>Tier-1 & Tier-2 Manufacturers</h3>
+<p>Automotive and discrete manufacturing environments</p>
+</div>
+</div>
+
+<p class="footer-small" style="margin-top:18px">
+Client references are for experience context only.
+</p>
+</div>
+</section>
+
+<section id="contact" class="section fade-up">
+<div class="container">
+<h2>Contact Us</h2>
+<div class="contact-box">
+<p><strong>Email:</strong> contact@digitalsmartfactory.in</p>
+<p><strong>Location:</strong> India</p>
+</div>
+</div>
 </section>
 
 <footer class="footer">
-    <div class="container">
-        <p>© 2025 Digital Smart Factory. All rights reserved.</p>
-    </div>
+<div class="container">
+<p>© 2025 Digital Smart Factory</p>
+<p class="footer-small">OPC • Industrial IoT • Smart Manufacturing</p>
+</div>
 </footer>
 
 <script>
-const elements = document.querySelectorAll('.fade-up');
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-}, { threshold: 0.15 });
-elements.forEach(el => observer.observe(el));
+const obs=new IntersectionObserver(e=>{
+e.forEach(i=>{if(i.isIntersecting)i.target.classList.add("show")})
+},{threshold:.15});
+document.querySelectorAll(".fade-up").forEach(el=>obs.observe(el));
 </script>
 
 </body>
