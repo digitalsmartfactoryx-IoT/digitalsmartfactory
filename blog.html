@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>OPC & CNC Insights | Digital Smart Factory</title>
+
+    <meta name="description"
+          content="Insights on OPC UA, CNC monitoring, Industrial IoT gateways, and scalable smart factory architectures for manufacturing industries.">
+
+    <meta name="keywords"
+          content="OPC UA, CNC Monitoring, Industrial IoT Gateway, Smart Factory Architecture, Industry 4.0 India">
+
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="brand">
+            <h1>Digital Smart Factory</h1>
+            <p>OPC • CNC • Industrial IoT Insights</p>
+        </div>
+    </div>
+</header>
+
+<nav class="nav">
+    <div class="container nav-flex">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="section fade-up">
+    <div class="container">
+        <h2>OPC & CNC Technology Insights</h2>
+
+        <!-- BLOG 1 -->
+        <div class="card fade-up">
+            <img src="assets/images/opc-blog.jpg" alt="OPC UA Architecture">
+            <h3>How a Single OPC Gateway Can Scale to 200 Machines</h3>
+            <p>
+                Modern manufacturing plants operate a mix of CNC machines,
+                PLCs, and utilities from different vendors. A centralized
+                OPC-based Smart IoT Gateway enables standardized data access
+                without deploying multiple vendor-specific systems.
+            </p>
+            <p>
+                By normalizing machine data into a unified OPC UA namespace,
+                manufacturers can connect MES, EMS, ERP, and analytics platforms
+                with minimal complexity and high reliability.
+            </p>
+        </div>
+
+        <!-- BLOG 2 -->
+        <div class="card fade-up delay-1">
+            <img src="assets/images/cnc-blog.jpg" alt="CNC Monitoring">
+            <h3>CNC Monitoring Using FOCAS, OPC UA & Industrial Protocols</h3>
+            <p>
+                CNC controllers such as FANUC, Brother, and Siemens Sinumerik
+                expose critical production parameters including cycle time,
+                part count, alarms, and machine status.
+            </p>
+            <p>
+                Using protocols like FOCAS, Modbus, and Profinet, this data
+                can be acquired in real time and published through OPC UA,
+                enabling plant-wide visibility and performance optimization.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 Digital Smart Factory. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+const elements = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.15 });
+elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
