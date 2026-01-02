@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Smart Factory India | Industrial IoT Solutions</title>
     <meta name="description" content="Enterprise-grade Industry 4.0, OPC UA, and Industrial IoT solutions for Smart Manufacturing.">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    
     <style>
         /* ================= VARIABLES ================= */
         :root {
@@ -26,7 +24,7 @@
 
         /* ================= RESET & GLOBAL ================= */
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--primary);
@@ -43,7 +41,7 @@
 
         a { text-decoration: none; transition: 0.3s; }
         ul { list-style: none; }
-        
+
         .container {
             width: 90%;
             max-width: 1200px;
@@ -61,7 +59,7 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
-            padding: 15px 0;
+            padding: 10px 0; /* Reduced padding slightly to accommodate image height */
         }
 
         .nav-container {
@@ -70,18 +68,18 @@
             align-items: center;
         }
 
-        /* Fixed Logo Styling */
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #ffffff; /* Digital is White */
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        /* --- NEW LOGO STYLING --- */
+        .logo-link {
+            display: flex;
+            align-items: center;
         }
-        
-        .logo span {
-            color: var(--accent); /* Smart Factory is Cyan */
-            font-weight: 400;
+
+        .logo-img {
+            height: 60px; /* Adjusts height automatically */
+            width: auto;  /* Maintains aspect ratio */
+            object-fit: contain;
+            /* Optional: If the image background doesn't match perfectly, add a radius */
+            border-radius: 4px; 
         }
 
         .nav-links {
@@ -107,6 +105,7 @@
             border-radius: 4px;
             font-size: 14px;
         }
+
         .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 0 15px var(--accent); color: #fff;}
 
         /* ================= HERO SECTION ================= */
@@ -118,7 +117,7 @@
             text-align: center;
             background: 
                 linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)),
-                url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop'); 
+                url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -154,17 +153,17 @@
 
         /* ================= SECTIONS GENERAL ================= */
         .section { padding: 100px 0; }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 60px;
         }
-        
+
         .section-title h2 {
             font-size: 36px;
             margin-bottom: 10px;
         }
-        
+
         .section-title .line {
             width: 60px;
             height: 4px;
@@ -182,7 +181,7 @@
         }
 
         .about-text p { margin-bottom: 20px; color: var(--text-muted); }
-        
+
         .about-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -244,9 +243,9 @@
         .card:hover .card-img-wrap img { transform: scale(1.1); }
 
         .card-content { padding: 25px; }
-        
+
         .card-content h3 { font-size: 20px; margin-bottom: 12px; color: #fff; }
-        
+
         .card-content p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
 
         .card-link {
@@ -271,7 +270,7 @@
         }
 
         .tech-list { flex: 1; min-width: 300px; }
-        
+
         .tech-item {
             display: flex;
             gap: 15px;
@@ -322,7 +321,7 @@
             background-color: #020617;
             text-align: center;
         }
-        
+
         .contact-box {
             background: linear-gradient(135deg, #1e293b, #0f172a);
             padding: 40px;
@@ -340,11 +339,11 @@
             gap: 10px;
             color: var(--text-main);
         }
-        
+
         /* CONTACT LINKS COLOR FIX - BRIGHT WHITE */
         .contact-item a {
-            color: #ffffff !important; 
-            font-weight: 500;
+            color: #ffffff !important;
+             font-weight: 500;
             text-decoration: none;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
@@ -352,15 +351,15 @@
 
         /* Changes color to Cyan when you hover */
         .contact-item a:hover {
-            color: #22d3ee !important; 
-            text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+            color: #22d3ee !important;
+             text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
         }
 
         /* Icon Colors */
         .contact-item i {
             color: #06b6d4;
-            margin-right: 12px; 
-        }
+            margin-right: 12px;
+         }
 
         /* ================= FOOTER ================= */
         footer {
@@ -383,8 +382,9 @@
         /* Mobile Responsive */
         @media(max-width: 768px) {
             .hero-content h1 { font-size: 32px; }
-            .nav-links { display: none; } 
+            .nav-links { display: none; }
             .about-grid { grid-template-columns: 1fr; }
+            .logo-img { height: 45px; } /* Slightly smaller logo on mobile */
         }
     </style>
 </head>
@@ -392,8 +392,10 @@
 
     <nav class="nav">
         <div class="container nav-container">
-            <div class="logo">Digital <span>Smart Factory</span></div>
-            
+            <a href="#" class="logo-link">
+                <img src="New Icon.png" alt="Digital Smart Factory Logo" class="logo-img">
+            </a>
+
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#solutions">Solutions</a>
@@ -408,7 +410,7 @@
         <div class="container hero-content fade-up">
             <h1>Intelligent Manufacturing <br> <span style="font-weight:300; font-size: 0.8em; color:var(--accent)">Powered by Data</span></h1>
             <p>
-                Connect your CNCs, PLCs, and Robots into a unified smart ecosystem. 
+                Connect your CNCs, PLCs, and Robots into a unified smart ecosystem.
                 Real-time visibility, predictive insights, and sustainable production.
             </p>
             <a href="#solutions" class="btn-cta" style="padding: 15px 40px; font-size: 16px;">Explore Solutions</a>
@@ -421,16 +423,15 @@
                 <h2>The Smart Factory Evolution</h2>
                 <div class="line"></div>
             </div>
-
             <div class="about-grid">
                 <div class="about-text">
                     <p>
-                        We bridge the gap between OT (Operational Technology) and IT using enterprise-grade 
-                        Industrial IoT architectures. We move manufacturing organizations from isolated silos 
+                        We bridge the gap between OT (Operational Technology) and IT using enterprise-grade
+                        Industrial IoT architectures. We move manufacturing organizations from isolated silos
                         to connected, data-driven powerhouses.
                     </p>
                     <p>
-                        Our specialized expertise covers the entire spectrum: from extracting data at the PLC/CNC level 
+                        Our specialized expertise covers the entire spectrum: from extracting data at the PLC/CNC level
                         to visualizing actionable KPIs on the cloud or on-premise servers.
                     </p>
                     
@@ -458,7 +459,6 @@
                 <h2>Core Solutions</h2>
                 <div class="line"></div>
             </div>
-
             <div class="grid">
                 <div class="card">
                     <div class="card-img-wrap">
@@ -470,7 +470,6 @@
                         <a href="#" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-img-wrap">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="CNC Monitor">
@@ -481,7 +480,6 @@
                         <a href="#" class="card-link">View Features <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-img-wrap">
                         <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop" alt="Energy">
@@ -493,7 +491,7 @@
                     </div>
                 </div>
                 
-                 <div class="card">
+                <div class="card">
                     <div class="card-img-wrap">
                         <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop" alt="Sustainability">
                     </div>
@@ -513,7 +511,6 @@
                 <h2>The Architecture</h2>
                 <div class="line"></div>
             </div>
-
             <div class="tech-container">
                 <div class="tech-list">
                     <div class="tech-item">
@@ -531,7 +528,6 @@
                             <p>Native support for OPC UA, MTConnect, MQTT, Modbus TCP/IP, and proprietary FOCAS/SLMP protocols.</p>
                         </div>
                     </div>
-
                     <div class="tech-item">
                         <div class="tech-icon"><i class="fa-solid fa-database"></i></div>
                         <div class="tech-info">
@@ -540,7 +536,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="tech-list" style="background: var(--secondary); padding:30px; border-radius:12px; border:1px solid var(--border)">
                     <h3 style="margin-bottom:20px; color:var(--accent)">Supported Assets</h3>
                     <ul style="color:var(--text-muted); line-height:2.5;">
@@ -581,22 +576,18 @@
                     <i class="fa-solid fa-envelope"></i>
                     <a href="mailto:enquiry@digitalsmartfactory.in">enquiry@digitalsmartfactory.in</a>
                 </div>
-
                 <div class="contact-item">
                     <i class="fa-solid fa-phone"></i>
                     <a href="tel:+918534803839">+91 8534803839</a>
                 </div>
-
                 <div class="contact-item">
                     <i class="fa-brands fa-whatsapp" style="font-size: 1.2em;"></i>
                     <a href="https://wa.me/918534803839" target="_blank">Chat on WhatsApp</a>
                 </div>
-
                 <div class="contact-item">
                     <i class="fa-solid fa-location-dot"></i>
                     <span>New Delhi, India</span>
                 </div>
-
                 <div style="margin-top:25px;">
                     <a href="https://wa.me/918534803839" class="btn-cta">Request a Demo</a>
                 </div>
