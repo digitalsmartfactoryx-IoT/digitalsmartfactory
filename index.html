@@ -59,7 +59,7 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
-            padding: 10px 0; /* Reduced padding slightly to accommodate image height */
+            padding: 12px 0; 
         }
 
         .nav-container {
@@ -68,18 +68,38 @@
             align-items: center;
         }
 
-        /* --- NEW LOGO STYLING --- */
+        /* --- INTEGRATED LOGO STYLING --- */
         .logo-link {
             display: flex;
             align-items: center;
+            gap: 15px; /* Space between icon and text */
         }
 
         .logo-img {
-            height: 60px; /* Adjusts height automatically */
-            width: auto;  /* Maintains aspect ratio */
+            height: 50px; /* Sized to fit navigation bar comfortably */
+            width: auto;
             object-fit: contain;
-            /* Optional: If the image background doesn't match perfectly, add a radius */
-            border-radius: 4px; 
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 26px; /* Larger size */
+            font-weight: 700;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Bright "Digital" styling */
+        .logo-text .bright {
+            color: #ffffff; 
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        /* "Smart Factory" styling */
+        .logo-text .accent {
+            color: var(--accent);
+            font-weight: 500;
         }
 
         .nav-links {
@@ -340,22 +360,19 @@
             color: var(--text-main);
         }
 
-        /* CONTACT LINKS COLOR FIX - BRIGHT WHITE */
         .contact-item a {
             color: #ffffff !important;
-             font-weight: 500;
+            font-weight: 500;
             text-decoration: none;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
         }
 
-        /* Changes color to Cyan when you hover */
         .contact-item a:hover {
             color: #22d3ee !important;
-             text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+            text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
         }
 
-        /* Icon Colors */
         .contact-item i {
             color: #06b6d4;
             margin-right: 12px;
@@ -380,22 +397,26 @@
         .fade-up.show { opacity: 1; transform: translateY(0); }
 
         /* Mobile Responsive */
+        @media(max-width: 1024px) {
+            .logo-text { font-size: 20px; }
+            .logo-img { height: 40px; }
+        }
+
         @media(max-width: 768px) {
             .hero-content h1 { font-size: 32px; }
             .nav-links { display: none; }
             .about-grid { grid-template-columns: 1fr; }
-            .logo-img { height: 45px; } /* Slightly smaller logo on mobile */
         }
     </style>
 </head>
 <body>
 
-<nav class="nav">
+    <nav class="nav">
         <div class="container nav-container">
-            <a href="#" class="logo-link" style="display: flex; align-items: center; gap: 12px;">
-                <img src="New Icon.png" alt="Logo" class="logo-img" style="height: 45px; width: auto;">
-                <div class="logo" style="font-size: 20px; font-family: 'Orbitron', sans-serif;">
-                    Digital <span style="color: var(--accent); font-weight: 400;">Smart Factory</span>
+            <a href="#" class="logo-link">
+                <img src="New Icon.png" alt="Digital Smart Factory Icon" class="logo-img">
+                <div class="logo-text">
+                    <span class="bright">Digital</span> <span class="accent">Smart Factory</span>
                 </div>
             </a>
 
@@ -408,6 +429,7 @@
             <a href="#contact" class="btn-cta">Get Started</a>
         </div>
     </nav>
+
     <header class="hero">
         <div class="container hero-content fade-up">
             <h1>Intelligent Manufacturing <br> <span style="font-weight:300; font-size: 0.8em; color:var(--accent)">Powered by Data</span></h1>
@@ -599,13 +621,12 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Digital Smart Factory. All rights reserved.</p>
+            <p>&copy; 2026 Digital Smart Factory. All rights reserved.</p>
             <p style="font-size:12px; opacity:0.6; margin-top:5px;">Innovating Industry 4.0 • Industrial IoT • Sustainability</p>
         </div>
     </footer>
 
     <script>
-        // Simple Intersection Observer for Fade-Up Animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -618,4 +639,3 @@
     </script>
 </body>
 </html>
-
