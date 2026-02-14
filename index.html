@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Smart Factory India | Industrial IoT Solutions</title>
-    <meta name="description" content="Enterprise-grade Industry 4.0, OPC UA, and Industrial IoT solutions for Smart Manufacturing.">
+    <title>Factory Link+ | Smart Intelligence IoT Industry 4.0 Platform</title>
+    <meta name="description" content="Factory Link+ Smart Intelligence IoT Industry 4.0 Platform for Manufacturing Process Powered by Digital Smart Factory.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
@@ -159,16 +159,40 @@
             background: -webkit-linear-gradient(#fff, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero-content h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 300;
+            color: #fff;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .powered-by {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            display: inline-block;
+            border: 1px solid var(--accent);
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: rgba(6, 182, 212, 0.1);
         }
 
         .hero-content p {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--text-muted);
             max-width: 700px;
             margin: 0 auto 40px auto;
         }
 
-        /* ================= TICKER STYLES (NEW) ================= */
+        /* ================= TICKER STYLES ================= */
         .ticker-wrap {
             position: relative;
             background: var(--accent);
@@ -301,7 +325,7 @@
             gap: 8px;
         }
 
-        /* ================= ECOSYSTEM & PLC STYLES (NEW) ================= */
+        /* ================= ECOSYSTEM & PLC STYLES ================= */
         .plc-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -366,7 +390,7 @@
             background: rgba(6, 182, 212, 0.1);
         }
 
-        /* ================= PROTOCOL MATRIX (NEW) ================= */
+        /* ================= PROTOCOL MATRIX ================= */
         .matrix-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -486,10 +510,12 @@
         @media(max-width: 1024px) {
             .logo-text { font-size: 20px; }
             .logo-img { height: 40px; }
+            .hero-content h1 { font-size: 36px; }
         }
 
         @media(max-width: 768px) {
-            .hero-content h1 { font-size: 32px; }
+            .hero-content h1 { font-size: 28px; }
+            .hero-content h2 { font-size: 18px; }
             .nav-links { display: none; }
             .about-grid { grid-template-columns: 1fr; }
             .plc-grid { grid-template-columns: 1fr; }
@@ -519,7 +545,12 @@
 
     <header class="hero">
         <div class="container hero-content fade-up">
-            <h1>Factory Link+ Intelligent Manufacturing <br> <span style="font-weight:300; font-size: 0.8em; color:var(--accent)">Powered by Data</span></h1>
+            <h1>Factory Link+</h1>
+            
+            <h2>Smart Intelligence IoT Industry 4.0 Platform<br>for Manufacturing Process</h2>
+            
+            <div class="powered-by">Powered by Digital Smart Factory</div>
+            
             <p>
                 Connect your CNCs, PLCs, and Robots into a unified smart ecosystem.
                 Real-time visibility, predictive insights, and sustainable production.
@@ -791,4 +822,3 @@
     </script>
 </body>
 </html>
-
