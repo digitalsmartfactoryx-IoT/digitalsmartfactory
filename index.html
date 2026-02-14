@@ -1,429 +1,474 @@
-<!DOCTYPE html>
+<!--
+Multi-page HTML bundle for "Digital Smart Factory" (Factory Link+)
+Files included below. Copy each section into separate .html files (index.html, about.html, solutions.html, product-factorylink.html, contact.html) in a single folder.
+Replace placeholders: PHONE, EMAIL, LOGO.png, and social links.
+-->
+
+<!-- ==========================
+FILE: index.html
+========================== -->
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Smart Factory | Industry 4.0 Ecosystem</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Smart Factory — Factory Link+ | Intelligent Manufacturing</title>
+  <meta name="description" content="Digital Smart Factory | Factory Link+ — Industry 4.0, Industrial IoT, Energy Monitoring, Machine Monitoring, ERP & SCADA integration.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{--bg:#071026;--card:#0f172a;--muted:#98a6b6;--accent:#06b6d4;--accent2:#3b82f6;--glass:rgba(255,255,255,0.04);--text:#eef5fb}
+    *{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#041223 0%,#071026 60%);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:1200px;margin:0 auto;padding:24px}
+    /* NAV */
+    nav.site{position:fixed;left:0;right:0;top:12px;padding:8px 18px;background:linear-gradient(180deg,rgba(2,6,23,0.65),rgba(2,6,23,0.35));backdrop-filter:blur(8px);border-radius:12px;width:calc(100% - 48px);z-index:99;border:1px solid rgba(255,255,255,0.04)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{width:52px;height:52px;object-fit:contain;border-radius:8px}
+    .brand h1{font-family:Orbitron,Inter;font-size:18px;margin:0;text-transform:uppercase;letter-spacing:1px}
+    .brand h1 .small{display:block;font-size:11px;font-weight:600;color:var(--muted);font-family:Inter}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{font-weight:600;color:var(--text);padding:8px 12px;border-radius:8px;text-transform:uppercase;font-size:13px}
+    .nav-links a:hover{background:var(--glass);color:var(--accent)}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#031022;padding:10px 18px;border-radius:8px;font-weight:700}
 
-    <style>
-        /* =========================================
-           1. CORE VARIABLES & SETUP
-           ========================================= */
-        :root {
-            --bg-dark: #0a0a0a;
-            --bg-panel: #141414;
-            --primary: #00e5ff;   /* Neon Cyan */
-            --primary-dim: rgba(0, 229, 255, 0.1);
-            --accent: #ff2a6d;    /* Neon Pink/Red for alerts */
-            --text-main: #ffffff;
-            --text-gray: #a0a0a0;
-            --glass: rgba(20, 20, 20, 0.7);
-            --border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    /* HERO */
+    header.hero{height:88vh;display:flex;align-items:center;padding-top:80px}
+    .hero-grid{display:grid;grid-template-columns:1fr 440px;gap:40px;align-items:center}
+    .hero h2{font-family:Orbitron;font-size:44px;margin:0 0 16px;line-height:1.02}
+    .hero p{color:var(--muted);margin:0 0 22px}
+    .kpis{display:flex;gap:14px;margin-top:18px}
+    .kpi{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);min-width:120px;text-align:center}
+    .kpi h3{margin:0;font-size:18px;color:var(--accent)}
+    .hero-visual{background:linear-gradient(180deg, rgba(6,182,212,0.06), transparent), url('https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=2070&auto=format&fit=crop') center/cover;padding:28px;border-radius:12px;box-shadow:0 10px 40px rgba(2,6,23,0.6)}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Exo 2', sans-serif;
-            overflow-x: hidden;
-        }
+    /* SOLUTIONS PREVIEW */
+    section.cards{padding:40px 0}
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .35s,box-shadow .35s}
+    .card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(3,20,30,0.6);border-color:rgba(6,182,212,0.25)}
+    .card h4{margin:0 0 10px;font-size:18px}
+    .card p{color:var(--muted);margin:0 0 12px}
+    .card .more{color:var(--accent);font-weight:700}
 
-        h1, h2, h3 { font-family: 'Orbitron', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
+    /* FEATURES ROW */
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;padding:36px 0}
+    .features .box{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
 
-        /* =========================================
-           2. ANIMATIONS & EFFECTS
-           ========================================= */
-        @keyframes scanline {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100%); }
-        }
-        
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px var(--primary); }
-            50% { box-shadow: 0 0 20px var(--primary), 0 0 10px var(--primary); }
-            100% { box-shadow: 0 0 5px var(--primary); }
-        }
+    /* FOOTER */
+    footer.site{padding:36px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:40px}
+    footer .col{display:flex;flex-direction:column;gap:8px}
 
-        .fade-in { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-        /* =========================================
-           3. NAVIGATION
-           ========================================= */
-        nav {
-            position: fixed; width: 100%; top: 0; z-index: 1000;
-            background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 229, 255, 0.3);
-            padding: 15px 0;
-        }
-        .nav-container {
-            max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;
-        }
-        .logo { font-size: 24px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 10px; }
-        .logo span { color: var(--primary); }
-        
-        .nav-links a {
-            color: #fff; text-decoration: none; margin-left: 30px; font-weight: 600; transition: 0.3s;
-            text-transform: uppercase; font-size: 14px;
-        }
-        .nav-links a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
-        
-        .btn-cta {
-            padding: 10px 25px; background: transparent; border: 1px solid var(--primary);
-            color: var(--primary); font-weight: 700; text-transform: uppercase;
-            transition: 0.3s; position: relative; overflow: hidden;
-        }
-        .btn-cta:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); }
-
-        /* =========================================
-           4. HERO SECTION
-           ========================================= */
-        .hero {
-            height: 100vh; display: flex; align-items: center; justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
-                        url('https://images.unsplash.com/photo-1565514020176-886d35f498c8?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover; background-position: center;
-            position: relative;
-        }
-        .hero::before {
-            content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0;
-            background: repeating-linear-gradient(0deg, transparent, transparent 2px, #000 3px);
-            opacity: 0.3; pointer-events: none;
-        }
-        
-        .hero-content {
-            text-align: center; z-index: 2; max-width: 900px; padding: 20px;
-            border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(5px);
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem; margin-bottom: 20px;
-            background: linear-gradient(90deg, #fff, var(--primary));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #ddd; }
-
-        /* =========================================
-           5. PROTOCOLS TICKER (NEW)
-           ========================================= */
-        .protocols-bar {
-            background: var(--primary); color: #000; padding: 15px 0;
-            font-weight: 700; text-transform: uppercase; white-space: nowrap; overflow: hidden;
-            border-bottom: 2px solid #fff;
-        }
-        .marquee-content {
-            display: inline-block; animation: marquee 20s linear infinite;
-        }
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        /* =========================================
-           6. COMPATIBILITY & PLCS (IMAGES)
-           ========================================= */
-        .section { padding: 80px 20px; max-width: 1400px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
-        .section-title p { color: var(--text-gray); }
-
-        .hardware-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;
-        }
-
-        .hw-card {
-            background: var(--bg-panel); border: var(--border);
-            padding: 0; overflow: hidden; position: relative; transition: 0.3s;
-        }
-        .hw-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        
-        .hw-img {
-            width: 100%; height: 200px; object-fit: cover;
-            border-bottom: 2px solid var(--primary);
-        }
-        
-        .hw-content { padding: 25px; }
-        .hw-content h3 { color: #fff; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;}
-        
-        .model-list {
-            display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;
-        }
-        .model-tag {
-            background: #222; color: var(--primary); padding: 5px 10px; font-size: 0.85rem;
-            border: 1px solid rgba(0, 229, 255, 0.2); border-radius: 4px;
-        }
-
-        /* =========================================
-           7. CONNECTIVITY PROTOCOLS GRID
-           ========================================= */
-        .proto-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; margin-top: 50px;
-        }
-        .proto-box {
-            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
-            padding: 15px; text-align: center; font-weight: 600; color: #fff;
-            transition: 0.3s; font-size: 0.9rem;
-        }
-        .proto-box:hover { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); }
-
-        /* =========================================
-           8. SOLUTIONS WITH IMAGES
-           ========================================= */
-        .solution-row {
-            display: flex; align-items: center; gap: 50px; margin-bottom: 80px;
-            background: rgba(255,255,255,0.02); padding: 30px; border-radius: 10px; border: var(--border);
-        }
-        .solution-row:nth-child(even) { flex-direction: row-reverse; }
-        .sol-img { flex: 1; border-radius: 8px; overflow: hidden; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-        .sol-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .solution-row:hover .sol-img img { transform: scale(1.1); }
-        .sol-text { flex: 1; }
-        .sol-text ul { list-style: none; margin-top: 20px; }
-        .sol-text li { margin-bottom: 10px; display: flex; gap: 10px; color: var(--text-gray); }
-        .sol-text li i { color: var(--primary); }
-
-        /* =========================================
-           9. CONTACT & FOOTER
-           ========================================= */
-        .contact-section { background: #0f0f0f; border-top: 1px solid #333; }
-        .contact-form {
-            max-width: 600px; margin: 0 auto; display: grid; gap: 15px;
-        }
-        input, textarea {
-            background: #1a1a1a; border: 1px solid #333; padding: 15px; color: #fff; width: 100%;
-            font-family: 'Exo 2', sans-serif;
-        }
-        input:focus, textarea:focus { border-color: var(--primary); outline: none; }
-        
-        footer {
-            text-align: center; padding: 40px; background: #050505; border-top: 1px solid #222; font-size: 0.9rem; color: #666;
-        }
-
-        /* Mobile */
-        @media(max-width: 768px) {
-            .solution-row, .solution-row:nth-child(even) { flex-direction: column; }
-            .hero h1 { font-size: 2rem; }
-            .nav-links { display: none; }
-        }
-    </style>
+    /* Responsive */
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}nav.site{padding:10px}header.hero{padding-top:60px;height:auto}.brand h1{font-size:15px}}
+  </style>
 </head>
 <body>
+  <nav class="site">
+    <div class="wrap nav-inner">
+      <div class="brand"><img src="LOGO.png" alt="Digital Smart Factory logo"><div><h1>Digital Smart Factory<span class="small">Factory Link+</span></h1></div></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="product-factorylink.html">Factory Link+</a>
+        <a href="contact.html" class="btn-primary">Request Demo</a>
+      </div>
+    </div>
+  </nav>
 
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-network-wired" style="color:var(--primary)"></i> 
-                DIGITAL<span>SMARTFACTORY</span>
-            </a>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#hardware">Supported PLCs</a>
-                <a href="#protocols">Protocols</a>
-                <a href="#solutions">Solutions</a>
-            </div>
-            <a href="#contact" class="btn-cta">Request Demo</a>
+  <main class="wrap">
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <h2>Accelerating Manufacturing Excellence<br><span style="font-weight:300;font-size:.8em;color:var(--accent)">Powered by Factory Link+</span></h2>
+          <p>Digital Smart Factory delivers advanced Industry 4.0 and Industrial IoT solutions to help manufacturers transform operations, reduce inefficiencies, and unlock real-time intelligence.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="product-factorylink.html" class="btn-primary">Explore Factory Link+</a>
+            <a href="contact.html" style="padding:10px 18px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text);font-weight:700">Talk to an Expert</a>
+          </div>
+
+          <div class="kpis">
+            <div class="kpi"><h3>200+</h3><div style="color:var(--muted);font-size:13px">Machines Connected</div></div>
+            <div class="kpi"><h3>8+</h3><div style="color:var(--muted);font-size:13px">Years Experience</div></div>
+          </div>
         </div>
+
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1549921296-3c6b9a9c96c4?q=80&w=2070&auto=format&fit=crop" alt="factory visual" style="width:100%;border-radius:8px;display:block">
+        </div>
+      </div>
+    </header>
+
+    <section class="cards">
+      <h3 style="color:var(--accent);letter-spacing:1px">Core Solutions</h3>
+      <p style="color:var(--muted);margin-top:6px">Comprehensive Industry 4.0 modules tailored for manufacturers.</p>
+      <div class="cards-grid" style="margin-top:18px">
+        <div class="card">
+          <h4><i class="fa-solid fa-bolt" style="color:var(--accent);margin-right:8px"></i>Energy & Utilities Monitoring</h4>
+          <p>Real-time dashboards for HT/LT, DG sets, solar, HVAC, compressed air and water systems to drive energy savings and reliability.</p>
+          <div class="more">View details →</div>
+        </div>
+        <div class="card">
+          <h4><i class="fa-solid fa-microchip" style="color:var(--accent);margin-right:8px"></i>Machine & CNC Monitoring</h4>
+          <p>Track OEE, cycle times, run/idle/breakdown, tool utilization and operator performance for higher throughput.</p>
+          <div class="more">View details →</div>
+        </div>
+        <div class="card">
+          <h4><i class="fa-solid fa-industry" style="color:var(--accent);margin-right:8px"></i>Production Monitoring</h4>
+          <p>Die casting, injection molding and assembly line monitoring with automated MIS and root cause identification.</p>
+          <div class="more">View details →</div>
+        </div>
+        <div class="card">
+          <h4><i class="fa-solid fa-network-wired" style="color:var(--accent);margin-right:8px"></i>ERP & SCADA Integration</h4>
+          <p>Seamless integration with SAP, Oracle, PLCs and SCADA to unify OT & IT data flows for single-pane reporting.</p>
+          <div class="more">View details →</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="box">
+        <h3 style="color:var(--accent)">Why Digital Smart Factory?</h3>
+        <p style="color:var(--muted)">Convert reactive plants into controlled, optimized operations using real-time intelligence and predictive analytics.</p>
+        <ul style="color:var(--muted);line-height:1.9">
+          <li>Automated dashboards & reporting</li>
+          <li>Reduced downtime & higher OEE</li>
+          <li>Optimized energy & utility cost</li>
+          <li>Faster root cause identification</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3 style="color:var(--accent)">Industries We Serve</h3>
+        <p style="color:var(--muted)">Automotive, Die Casting, Injection Molding, Heavy Engineering, FMCG, Energy & Process Industries.</p>
+        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+          <span style="background:var(--glass);padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)">Automotive</span>
+          <span style="background:var(--glass);padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)">Die Casting</span>
+          <span style="background:var(--glass);padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)">Injection Molding</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
+        <div class="col"><strong>Digital Smart Factory</strong><span style="color:var(--muted);font-size:13px">Factory Link+ — Industry 4.0 Platform</span></div>
+        <div class="col" style="text-align:right;color:var(--muted);font-size:14px">Contact: <a href="mailto:enquiry@digitalsmartfactory.in" style="color:var(--text);">enquiry@digitalsmartfactory.in</a> • +91-8534803839</div>
+      </div>
+    </footer>
+  </main>
+
+</body>
+</html>
+
+
+<!-- ==========================
+FILE: about.html
+========================== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Digital Smart Factory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Minimal reuse of styles for standalone pages */
+    :root{--bg:#071026;--card:#0f172a;--muted:#98a6b6;--accent:#06b6d4;--text:#eef5fb}
+    body{margin:0;font-family:Inter,system-ui;background:linear-gradient(180deg,#041223,#071026);color:var(--text)}
+    .wrap{max-width:1100px;margin:0 auto;padding:26px}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+    nav img{width:48px}
+    header{padding:40px 0}
+    h2{font-family:Orbitron;margin-bottom:6px}
+    .lead{color:var(--muted);margin-bottom:18px}
+    .grid{display:grid;grid-template-columns:1fr 380px;gap:28px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .timeline{list-style:none;padding:0;color:var(--muted)}
+    .timeline li{margin-bottom:12px}
+    footer{border-top:1px solid rgba(255,255,255,0.03);padding:28px 0;color:var(--muted);margin-top:20px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <div style="display:flex;align-items:center;gap:12px"><img src="LOGO.png" alt="logo"><div><strong>Digital Smart Factory</strong><div style="font-size:12px;color:var(--muted)">Factory Link+</div></div></div>
+      <div><a href="index.html" style="color:var(--muted);text-decoration:none">Home</a></div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content fade-in">
-            <h1>Industrial IoT & <br> Digital Transformation</h1>
-            <p>Connect Any Machine. Speak Any Protocol. Visualize Everywhere.</p>
-            <p style="font-size: 0.9rem; color: var(--primary);">Compatible with Siemens, Mitsubishi, Fanuc, Allen Bradley & More</p>
-            <br>
-            <a href="#solutions" class="btn-cta" style="background:var(--primary); color:black;">Explore Factory Link+</a>
-        </div>
-    </section>
+    <header>
+      <h2>About Digital Smart Factory</h2>
+      <p class="lead">We are an Industry 4.0 technology company focused on enabling manufacturing enterprises to become smart, connected, and data-driven.</p>
+    </header>
 
-    <div class="protocols-bar">
-        <div class="marquee-content">
-            MODBUS RTU/TCP • PROFINET • PROFIBUS • OPC UA-DA • CC-LINK • SLMP • CANBUS • BACNET • FANUC FOCAS • BROTHER SOFT • HAAS • MT CONNECT AI • DI+ • MODBUS RTU/TCP • PROFINET • PROFIBUS • OPC UA-DA • CC-LINK • SLMP • CANBUS • BACNET • FANUC FOCAS
-        </div>
-    </div>
+    <section class="grid">
+      <div>
+        <div class="card">
+          <h3 style="color:var(--accent)">Our Mission</h3>
+          <p style="color:var(--muted)">To convert reactive plants into intelligent, controlled, and optimized operations by leveraging secure Industrial IoT, machine telemetry and advanced analytics.</p>
 
-    <section id="hardware" class="section">
-        <div class="section-title fade-in">
-            <h2>Supported OEM & PLC Ecosystem</h2>
-            <p>We connect legacy systems and modern controllers into one unified data lake.</p>
-        </div>
-
-        <div class="hardware-grid">
-            
-            <div class="hw-card fade-in">
-                <img src="https://images.unsplash.com/photo-1580584126903-c17d41830450?q=80&w=1000&auto=format&fit=crop" alt="Siemens PLC" class="hw-img">
-                <div class="hw-content">
-                    <h3><i class="fa-solid fa-microchip"></i> SIEMENS</h3>
-                    <p style="color:var(--text-gray); font-size:0.9rem;">Seamless data extraction via S7 Protocol & Profinet.</p>
-                    <div class="model-list">
-                        <span class="model-tag">S7-1200</span>
-                        <span class="model-tag">S7-1500</span>
-                        <span class="model-tag">S7-300 / 400</span>
-                        <span class="model-tag">LOGO! 8</span>
-                        <span class="model-tag">Sinumerik 840D sl</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hw-card fade-in">
-                <img src="https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc?q=80&w=1000&auto=format&fit=crop" alt="Mitsubishi PLC" class="hw-img">
-                <div class="hw-content">
-                    <h3><i class="fa-solid fa-robot"></i> MITSUBISHI ELECTRIC</h3>
-                    <p style="color:var(--text-gray); font-size:0.9rem;">Direct connection via SLMP, CC-Link IE, and MC Protocol.</p>
-                    <div class="model-list">
-                        <span class="model-tag">FX5U / FX3G</span>
-                        <span class="model-tag">Melsec Q Series</span>
-                        <span class="model-tag">Melsec R Series</span>
-                        <span class="model-tag">L Series</span>
-                        <span class="model-tag">M70 / M80 CNC</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hw-card fade-in">
-                <img src="https://images.unsplash.com/photo-1531297461136-82lw8z9a8.jpg?q=80&w=1000&auto=format&fit=crop" alt="Allen Bradley" class="hw-img">
-                <div class="hw-content">
-                    <h3><i class="fa-solid fa-server"></i> ROCKWELL / ALLEN BRADLEY</h3>
-                    <p style="color:var(--text-gray); font-size:0.9rem;">EtherNet/IP integration for USA & European standards.</p>
-                    <div class="model-list">
-                        <span class="model-tag">MicroLogix 1100/1400</span>
-                        <span class="model-tag">CompactLogix</span>
-                        <span class="model-tag">ControlLogix</span>
-                        <span class="model-tag">SLC 500</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hw-card fade-in">
-                <img src="https://images.unsplash.com/photo-1617575510427-1a43a7590d65?q=80&w=1000&auto=format&fit=crop" alt="CNC Machines" class="hw-img">
-                <div class="hw-content">
-                    <h3><i class="fa-solid fa-gears"></i> CNC & OTHERS</h3>
-                    <p style="color:var(--text-gray); font-size:0.9rem;">Specialized drivers for CNCs and Robots.</p>
-                    <div class="model-list">
-                        <span class="model-tag">Fanuc 0i / 30i</span>
-                        <span class="model-tag">Haas NGC</span>
-                        <span class="model-tag">Brother Speedio</span>
-                        <span class="model-tag">Mazak SmartBox</span>
-                        <span class="model-tag">Omron NX/NJ</span>
-                        <span class="model-tag">Delta DVP</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="protocols" class="section" style="background: #0f0f0f;">
-        <div class="section-title fade-in">
-            <h2>Universal Connectivity Protocols</h2>
-            <p>Our Gateway supports 50+ Industrial Drivers natively.</p>
-        </div>
-        <div class="proto-grid fade-in">
-            <div class="proto-box">Modbus RTU (RS485)</div>
-            <div class="proto-box">Modbus TCP/IP</div>
-            <div class="proto-box" style="border-color:var(--primary); color:var(--primary);">OPC UA / DA</div>
-            <div class="proto-box">Profinet</div>
-            <div class="proto-box">Profibus DP</div>
-            <div class="proto-box">EtherNet/IP</div>
-            <div class="proto-box">CC-Link IE</div>
-            <div class="proto-box">SLMP / MC Protocol</div>
-            <div class="proto-box">FANUC FOCAS 1/2</div>
-            <div class="proto-box">MTConnect</div>
-            <div class="proto-box">Brother HTTP</div>
-            <div class="proto-box">Euromap 63/77</div>
-            <div class="proto-box">BACnet</div>
-            <div class="proto-box">CANbus (J1939)</div>
-            <div class="proto-box">MQTT / Sparkplug B</div>
-        </div>
-    </section>
-
-    <section id="solutions" class="section">
-        <div class="section-title fade-in">
-            <h2>Factory Link+ Solutions</h2>
+          <h3 style="margin-top:18px;color:var(--accent)">We Specialize In</h3>
+          <ul style="color:var(--muted);line-height:1.9">
+            <li>Industrial IoT Implementation</li>
+            <li>Real-Time Production Monitoring</li>
+            <li>Energy & Utility Optimization</li>
+            <li>ERP & SCADA Integration</li>
+            <li>Digital Transformation Strategy</li>
+          </ul>
         </div>
 
-        <div class="solution-row fade-in">
-            <div class="sol-text">
-                <h3 style="color:var(--primary); font-size: 1.5rem;">Energy & Utilities Monitoring</h3>
-                <p>Advanced EMS to track HT/LT Panels, Transformers, and DGs.</p>
-                <ul>
-                    <li><i class="fa-solid fa-check"></i> Real-time Power Factor & KVA monitoring</li>
-                    <li><i class="fa-solid fa-check"></i> Specific Energy Consumption (SEC) analysis</li>
-                    <li><i class="fa-solid fa-check"></i> Diesel Generator fuel vs energy logic</li>
-                    <li><i class="fa-solid fa-check"></i> Protocols: Modbus, BACnet</li>
-                </ul>
-            </div>
-            <div class="sol-img">
-                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1000&auto=format&fit=crop" alt="Energy Monitoring">
-            </div>
+        <div style="margin-top:18px" class="card">
+          <h3 style="color:var(--accent)">Approach</h3>
+          <ol class="timeline">
+            <li><strong>Assessment & Gap Analysis</strong> — Plant audit and digital readiness evaluation.</li>
+            <li><strong>IoT Deployment</strong> — Sensors, gateways, and machine connectivity.</li>
+            <li><strong>System Integration</strong> — ERP, SCADA and PLC integration.</li>
+            <li><strong>Analytics & Dashboards</strong> — Custom KPIs and reporting.</li>
+            <li><strong>Optimization</strong> — Continuous improvement and support.</li>
+          </ol>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h4 style="color:var(--accent)">Quick Stats</h4>
+          <p style="color:var(--muted)"><strong>200+</strong> Machines Connected<br><strong>8+</strong> Years Experience<br><strong>1000s</strong> Hours of Downtime Saved</p>
+          <a href="contact.html" style="display:inline-block;margin-top:12px;padding:10px 14px;background:linear-gradient(90deg,var(--accent),#3b82f6);color:#031022;border-radius:8px;font-weight:700;text-decoration:none">Request a Consultation</a>
         </div>
 
-        <div class="solution-row fade-in">
-            <div class="sol-img">
-                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1000&auto=format&fit=crop" alt="CNC Monitoring">
-            </div>
-            <div class="sol-text">
-                <h3 style="color:var(--primary); font-size: 1.5rem;">CNC & VMC Machine Analytics</h3>
-                <p>Direct integration with controller logic for granular data.</p>
-                <ul>
-                    <li><i class="fa-solid fa-check"></i> Spindle Load & Servo Temperature</li>
-                    <li><i class="fa-solid fa-check"></i> Exact alarm codes and history</li>
-                    <li><i class="fa-solid fa-check"></i> Part count validation vs Target</li>
-                    <li><i class="fa-solid fa-check"></i> Drivers: FOCAS, MTConnect, Haas</li>
-                </ul>
-            </div>
+        <div style="margin-top:18px;" class="card">
+          <h4 style="color:var(--accent)">Leadership</h4>
+          <p style="color:var(--muted)"><strong>Neeraj Gupta</strong><br>Founder & Head of Product</p>
         </div>
-
-        <div class="solution-row fade-in">
-            <div class="sol-text">
-                <h3 style="color:var(--primary); font-size: 1.5rem;">Production & OEE Digitization</h3>
-                <p>For Discrete Manufacturing, Assembly Lines, and Molding.</p>
-                <ul>
-                    <li><i class="fa-solid fa-check"></i> Automated OEE Calculation (Availability, Performance, Quality)</li>
-                    <li><i class="fa-solid fa-check"></i> Downtime Reason Code mapping</li>
-                    <li><i class="fa-solid fa-check"></i> Andon System integration</li>
-                    <li><i class="fa-solid fa-check"></i> DI+ (Digital Inputs) for legacy machines</li>
-                </ul>
-            </div>
-            <div class="sol-img">
-                <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=1000&auto=format&fit=crop" alt="Production Line">
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section section">
-        <div class="section-title fade-in">
-            <h2>Start Your Transformation</h2>
-        </div>
-        <form class="contact-form fade-in">
-            <input type="text" placeholder="Full Name" required>
-            <input type="text" placeholder="Company Name" required>
-            <input type="text" placeholder="Phone Number (India +91)" required>
-            <textarea rows="5" placeholder="Tell us about your machines (e.g., 5 Siemens S7 PLCs, 10 Fanuc CNCs)..."></textarea>
-            <button type="submit" class="btn-cta" style="background:var(--primary); color:#000; font-size:1.1rem; padding:15px;">GET FREE CONSULTATION</button>
-        </form>
+      </aside>
     </section>
 
     <footer>
-        <p>&copy; 2026 Digital Smart Factory. All rights reserved.</p>
-        <p>Delhi NCR, India | info@digitalsmartfactory.com</p>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div>© Digital Smart Factory • All rights reserved</div>
+        <div style="color:var(--muted)">Contact: enquiry@digitalsmartfactory.in • +91-8534803839</div>
+      </div>
     </footer>
+  </div>
+</body>
+</html>
 
-    <script>
-        // Simple Intersection Observer for Fade-In Effects
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    </script>
+<!-- ==========================
+FILE: solutions.html
+========================== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solutions — Digital Smart Factory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{--bg:#071026;--card:#0f172a;--muted:#98a6b6;--accent:#06b6d4;--text:#eef5fb}
+    body{margin:0;font-family:Inter;background:linear-gradient(180deg,#041223,#071026);color:var(--text)}
+    .wrap{max-width:1200px;margin:0 auto;padding:30px}
+    header{padding:26px 0}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .module{background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .module h3{color:var(--accent);margin-top:0}
+    .specs{color:var(--muted);line-height:1.9}
+    .cta{display:flex;gap:12px;margin-top:10px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div style="display:flex;gap:10px;align-items:center"><img src="LOGO.png" alt="logo" style="width:46px"><div style="font-weight:700">Digital Smart Factory</div></div><div><a href="index.html" style="color:var(--muted)">Home</a></div></nav>
+    <header>
+      <h2 style="font-family:Orbitron">Solutions</h2>
+      <p style="color:var(--muted)">Explore Factory Link+ modules — from energy management to production monitoring and ERP/SCADA integration.</p>
+    </header>
+
+    <section class="grid">
+      <div class="module">
+        <h3>Energy & Utilities Monitoring</h3>
+        <p class="specs">Monitor HT/LT panels, DG systems, solar arrays, HVAC & chiller efficiency, compressed air networks and water flows. Features include demand alerts, power quality analytics and sustainability reporting.</p>
+        <div class="cta"><a href="product-factorylink.html#energy" style="padding:10px 12px;background:linear-gradient(90deg,var(--accent),#3b82f6);color:#031022;border-radius:8px;text-decoration:none;font-weight:700">Explore</a></div>
+      </div>
+
+      <div class="module">
+        <h3>Real-Time Machine & CNC Monitoring</h3>
+        <p class="specs">Track machine status (run/idle/breakdown), cycle times, OEE, tool utilization and operator efficiency. Supports FANUC, Siemens, Mitsubishi & Haas controls via native & agent-based connectors.</p>
+        <div class="cta"><a href="product-factorylink.html#machine" style="padding:10px 12px;background:linear-gradient(90deg,var(--accent),#3b82f6);color:#031022;border-radius:8px;text-decoration:none;font-weight:700">Explore</a></div>
+      </div>
+
+      <div class="module">
+        <h3>Production Monitoring</h3>
+        <p class="specs">Process-level tracking for die casting, injection molding, assembly lines and batch processes. Automated MIS, rejection analysis and bottleneck identification for faster corrective actions.</p>
+      </div>
+
+      <div class="module">
+        <h3>ERP & SCADA Integration</h3>
+        <p class="specs">Seamless data synchronization to SAP, Oracle and custom ERP systems. Integrate SCADA and PLC telemetry into your enterprise data lake for consolidated analytics and reporting.</p>
+      </div>
+    </section>
+
+    <footer style="margin-top:28px;border-top:1px solid rgba(255,255,255,0.03);padding-top:18px;color:var(--muted)">Contact us: enquiry@digitalsmartfactory.in • +91-8534803839</footer>
+  </div>
+</body>
+</html>
+
+
+<!-- ==========================
+FILE: product-factorylink.html
+========================== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Factory Link+ — Product</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{--bg:#071026;--card:#0f172a;--muted:#98a6b6;--accent:#06b6d4;--text:#eef5fb}
+    body{margin:0;font-family:Inter;background:linear-gradient(180deg,#041223,#071026);color:var(--text)}
+    .wrap{max-width:1100px;margin:0 auto;padding:30px}
+    .hero{display:flex;gap:26px;align-items:center}
+    .hero .left{flex:1}
+    .hero h2{font-family:Orbitron}
+    .modules{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+    .module{background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .specs{color:var(--muted);line-height:1.8}
+    .tech{margin-top:18px;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px}
+    @media(max-width:900px){.hero{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div style="display:flex;gap:10px;align-items:center"><img src="LOGO.png" alt="logo" style="width:46px"><div style="font-weight:700">Digital Smart Factory</div></div><div><a href="index.html" style="color:var(--muted)">Home</a></div></nav>
+
+    <section class="hero">
+      <div class="left">
+        <h2>Factory Link+ — Not Just Monitoring. Total Operational Intelligence.</h2>
+        <p style="color:var(--muted)">Factory Link+ is a comprehensive Industrial IoT platform designed to provide real-time visibility across utilities, machines, and manufacturing processes. It transforms disconnected shop floors into intelligent production ecosystems.</p>
+        <a href="contact.html" style="display:inline-block;margin-top:12px;padding:10px 14px;background:linear-gradient(90deg,var(--accent),#3b82f6);color:#031022;border-radius:8px;text-decoration:none;font-weight:700">Request Demo</a>
+
+        <div style="margin-top:18px" class="tech">
+          <strong>Key Capabilities:</strong>
+          <ul style="color:var(--muted);line-height:1.9;margin-top:8px">
+            <li>Real-time energy & production dashboards</li>
+            <li>Machine telemetry & OEE tracking</li>
+            <li>ERP & SCADA integration</li>
+            <li>Alerts, reports & automated MIS</li>
+            <li>On-prem or cloud deployment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="width:420px">
+        <img src="https://images.unsplash.com/photo-1581091012184-7b1ff1d7b6e8?q=80&w=1200&auto=format&fit=crop" alt="platform" style="width:100%;border-radius:12px;display:block">
+      </div>
+    </section>
+
+    <section class="modules">
+      <div class="module" id="energy">
+        <h3 style="color:var(--accent)">Energy & Utilities Monitoring</h3>
+        <p class="specs">Monitor HT/LT panels, DG sets, solar arrays, HVAC & chiller systems, compressed air and water. Built-in demand alerts, power quality analytics, consumption trends and sustainability reporting.</p>
+      </div>
+      <div class="module" id="machine">
+        <h3 style="color:var(--accent)">Real-Time CNC / VMC Monitoring</h3>
+        <p class="specs">Run/Idle/Breakdown detection, cycle time monitoring, OEE, tool utilization and operator efficiency. Supports FANUC, Siemens, Mitsubishi controls and more.</p>
+      </div>
+      <div class="module">
+        <h3 style="color:var(--accent)">Production Monitoring</h3>
+        <p class="specs">Process-level visibility for die casting, injection molding, assembly lines and batch processes with rejection analysis and bottleneck identification.</p>
+      </div>
+      <div class="module">
+        <h3 style="color:var(--accent)">ERP & SCADA Integration</h3>
+        <p class="specs">Seamless data sync to SAP / Oracle and custom ERPs. Centralized dashboards to eliminate duplicate entry and enable data-driven decisions.</p>
+      </div>
+    </section>
+
+    <footer style="margin-top:28px;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03);padding-top:18px">Contact: enquiry@digitalsmartfactory.in • +91-8534803839</footer>
+  </div>
+</body>
+</html>
+
+
+<!-- ==========================
+FILE: contact.html
+========================== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Digital Smart Factory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{--bg:#071026;--card:#0f172a;--muted:#98a6b6;--accent:#06b6d4;--text:#eef5fb}
+    body{margin:0;font-family:Inter;background:linear-gradient(180deg,#041223,#071026);color:var(--text)}
+    .wrap{max-width:980px;margin:0 auto;padding:32px}
+    header{padding-bottom:8px}
+    .grid{display:grid;grid-template-columns:1fr 380px;gap:20px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    input,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);margin-bottom:10px}
+    button{padding:12px 16px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#3b82f6);color:#031022;border:none;font-weight:700}
+    .socials{display:flex;gap:8px;margin-top:10px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div style="display:flex;gap:10px;align-items:center"><img src="LOGO.png" alt="logo" style="width:46px"><div style="font-weight:700">Digital Smart Factory</div></div><div><a href="index.html" style="color:var(--muted)">Home</a></div></nav>
+
+    <header>
+      <h2>Start Your Digital Transformation</h2>
+      <p style="color:var(--muted)">Fill the form and our team will get back to you within one business day.</p>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <form id="contactForm">
+          <label>Name</label>
+          <input type="text" name="name" required placeholder="Your full name">
+          <label>Company</label>
+          <input type="text" name="company" placeholder="Company name">
+          <label>Email</label>
+          <input type="email" name="email" required placeholder="you@company.com">
+          <label>Phone</label>
+          <input type="tel" name="phone" placeholder="+91...">
+          <label>Message</label>
+          <textarea name="message" rows="6" placeholder="Tell us about your challenge or project"></textarea>
+          <button type="submit">Request a Demo</button>
+          <p id="status" style="color:var(--muted);margin-top:10px;font-size:14px"></p>
+        </form>
+
+        <script>
+          document.getElementById('contactForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            document.getElementById('status').textContent = 'Thanks! Your message has been recorded. We will contact you soon.';
+            // NOTE: Replace this with actual backend endpoint or form handler
+          });
+        </script>
+      </div>
+
+      <aside class="card">
+        <h4 style="color:var(--accent)">Contact Details</h4>
+        <p style="color:var(--muted)"><i class="fa-solid fa-envelope"></i> enquiry@digitalsmartfactory.in<br><i class="fa-solid fa-phone"></i> +91-8534803839</p>
+        <div style="margin-top:12px">
+          <h4 style="color:var(--accent)">Location</h4>
+          <p style="color:var(--muted)">New Delhi, India</p>
+        </div>
+        <div style="margin-top:12px">
+          <h4 style="color:var(--accent)">Quick Links</h4>
+          <p style="color:var(--muted)"><a href="product-factorylink.html" style="color:var(--text);text-decoration:none">Factory Link+</a> • <a href="solutions.html" style="color:var(--text);text-decoration:none">Solutions</a></p>
+        </div>
+      </aside>
+    </div>
+
+    <footer style="margin-top:28px;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03);padding-top:18px">© Digital Smart Factory. All rights reserved.</footer>
+  </div>
 </body>
 </html>
